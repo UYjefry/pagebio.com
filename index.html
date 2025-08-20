@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>El Peligro de las Redes</title>
+  <title>Peligros en las Redes Sociales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -12,305 +13,175 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.9)),
-                  url(https://cdn.pixabay.com/photo/2020/08/20/05/23/neon-5502633_1280.jpg);
-      background-size: cover;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-blend-mode: overlay;
-      color: white;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0f111a;
+      color: #fff;
       line-height: 1.6;
-      min-height: 100vh; /* para que ocupe toda la pantalla */
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .header {
+    header {
+      background: url('https://cdn.pixabay.com/photo/2020/08/20/05/23/neon-5502633_1280.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      margin-bottom: 50px;
+      padding: 0 20px;
+      background-blend-mode: overlay;
+      background-color: rgba(0,0,0,0.6);
     }
 
-    .header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
     }
 
-    .header p {
+    header p {
       font-size: 1.2rem;
+      max-width: 600px;
       color: #ccc;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #00ccff;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin-bottom: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
+      background: #1c1f2b;
+      border-radius: 12px;
       padding: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: 0.3s;
+      border-left: 6px solid #00ccff;
+      transition: transform 0.3s ease;
     }
 
     .card:hover {
-      background: rgba(255, 255, 255, 0.15);
-      transform: scale(1.02);
+      transform: translateY(-5px);
     }
 
-    .card-title {
+    .card h3 {
       font-size: 1.5rem;
       margin-bottom: 15px;
-      text-align: center;
+      color: #fff;
     }
 
-    .item {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 5px;
-      padding: 10px;
+    .card p {
+      font-size: 0.95rem;
+      color: #ccc;
       margin-bottom: 10px;
     }
 
-    .item-name {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .item-desc {
-      font-size: 0.9rem;
-      color: #ccc;
-      margin-bottom: 5px;
-    }
-
-    .item-tech {
-      background: rgba(255, 255, 255, 0.2);
-      padding: 2px 6px;
-      border-radius: 3px;
+    .tag {
+      display: inline-block;
+      background: #00ccff;
+      color: #000;
+      padding: 4px 8px;
+      border-radius: 4px;
       font-size: 0.8rem;
+      margin-top: 5px;
     }
 
-    .blue { border-left: 4px solid #4488ff; }
-    .green { border-left: 4px solid #00cc66; }
-    .red { border-left: 4px solid #ff4444; }
-    .purple { border-left: 4px solid #aa44ff; }
-    .yellow { border-left: 4px solid #ffaa00; }
-    .gray { border-left: 4px solid #888; }
-
-    .bottom {
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 10px;
-      padding: 30px;
-      text-align: center;
-    }
-
-    .bottom h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .feature {
+    .highlight {
+      background: #00ccff;
+      color: #000;
       padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 60px;
     }
 
-    .feature-icon {
-      font-size: 2rem;
+    .highlight h3 {
+      font-size: 1.8rem;
       margin-bottom: 10px;
     }
 
-    .feature h3 {
-      margin-bottom: 8px;
+    .highlight p {
+      font-size: 1rem;
+      color: #111;
     }
 
-    .feature p {
-      color: #ccc;
-      font-size: 0.9rem;
-    }
-
-    .footer {
+    footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px;
+      background: #111;
       color: #aaa;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
-      .header h1 { font-size: 2rem; }
-      .grid { grid-template-columns: 1fr; }
-      .container { padding: 15px; }
+      header h1 { font-size: 2.2rem; }
+      .section h2 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <div class="header">
-      <h1>Peligros en las Redes Sociales</h1>
-      <p>Información educativa sobre seguridad digital y protección online</p>
-    </div>
 
-    <!-- Cards Grid -->
+  <header>
+    <h1>Peligros en las Redes Sociales</h1>
+    <p>Descubre los riesgos ocultos del mundo digital y aprende cómo protegerte con responsabilidad y conocimiento</p>
+  </header>
+
+  <section class="section">
+    <h2>Principales Amenazas</h2>
     <div class="grid">
-      <!-- Ciberbullying -->
-      <div class="card blue">
-        <h3 class="card-title">Ciberbullying</h3>
-        <div class="item">
-          <div class="item-name">Acoso en línea</div>
-          <div class="item-desc">Ataques, insultos y humillaciones constantes a través de redes o mensajes</div>
-          <span class="item-tech">Redes Sociales</span>
-        </div>
-        <div class="item">
-          <div class="item-name">Violencia digital</div>
-          <div class="item-desc">Puede causar ansiedad, depresión o incluso pensamientos suicidas</div>
-          <span class="item-tech">Salud Mental</span>
-        </div>
-        <div class="item">
-          <div class="item-name">Cómo actuar</div>
-          <div class="item-desc">Bloquea, guarda pruebas y denuncia a plataformas o autoridades</div>
-          <span class="item-tech">Prevención</span>
-        </div>
+      <div class="card">
+        <h3>Ciberbullying</h3>
+        <p>Acoso constante en línea que puede afectar gravemente la salud mental.</p>
+        <span class="tag">Salud Mental</span>
       </div>
-
-      <!-- Grooming -->
-      <div class="card green">
-        <h3 class="card-title">Grooming</h3>
-        <div class="item">
-          <div class="item-name">Manipulación de menores</div>
-          <div class="item-desc">Adultos fingen ser jóvenes para generar confianza con fines sexuales</div>
-          <span class="item-tech">Delito Digital</span>
-        </div>
-        <div class="item">
-          <div class="item-name">Proceso gradual</div>
-          <div class="item-desc">Empieza con halagos y termina en presión o chantaje</div>
-          <span class="item-tech">Manipulación</span>
-        </div>
-        <div class="item">
-          <div class="item-name">Protección</div>
-          <div class="item-desc">Nunca compartas fotos privadas ni datos personales con desconocidos</div>
-          <span class="item-tech">Privacidad</span>
-        </div>
+      <div class="card">
+        <h3>Grooming</h3>
+        <p>Adultos que manipulan menores fingiendo ser jóvenes para fines sexuales.</p>
+        <span class="tag">Privacidad</span>
       </div>
-
-      <!-- Fraudes Online -->
-      <div class="card red">
-        <h3 class="card-title">Fraudes Online</h3>
-        <div class="item">
-          <div class="item-name">Phishing</div>
-          <div class="item-desc">Páginas falsas que roban contraseñas y datos bancarios</div>
-          <span class="item-tech">Engaño</span>
-        </div>
-        <div class="item">
-          <div class="item-name">Estafas románticas</div>
-          <div class="item-desc">Perfiles falsos que crean vínculos emocionales para obtener dinero</div>
-          <span class="item-tech">Manipulación</span>
-        </div>
-        <div class="item">
-          <div class="item-name">Prevención</div>
-          <div class="item-desc">Verificar URLs, no hacer clic en enlaces sospechosos</div>
-          <span class="item-tech">Seguridad</span>
-        </div>
+      <div class="card">
+        <h3>Fraudes Online</h3>
+        <p>Phishing, estafas románticas y robo de datos bancarios.</p>
+        <span class="tag">Seguridad</span>
       </div>
-
-      <!-- Privacidad -->
-      <div class="card purple">
-        <h3 class="card-title">Violación de Privacidad</h3>
-        <div class="item">
-          <div class="item-name">Robo de identidad</div>
-          <div class="item-desc">Uso malicioso de información personal para crear perfiles falsos</div>
-          <span class="item-tech">Suplantación</span>
-        </div>
-        <div class="item">
-          <div class="item-name">Exposición no deseada</div>
-          <div class="item-desc">Compartir fotos o información íntima sin consentimiento</div>
-          <span class="item-tech">Venganza</span>
-        </div>
-        <div class="item">
-          <div class="item-name">Configuración segura</div>
-          <div class="item-desc">Revisar y ajustar la privacidad en todas las plataformas</div>
-          <span class="item-tech">Protección</span>
-        </div>
+      <div class="card">
+        <h3>Violación de Privacidad</h3>
+        <p>Suplantación de identidad y exposición no consentida de información personal.</p>
+        <span class="tag">Protección</span>
       </div>
-
-      <!-- Adicción Digital -->
-      <div class="card yellow">
-        <h3 class="card-title">Adicción Digital</h3>
-        <div class="item">
-          <div class="item-name">Dependencia excesiva</div>
-          <div class="item-desc">Uso compulsivo que afecta relaciones y actividades diarias</div>
-          <span class="item-tech">Comportamiento</span>
-        </div>
-        <div class="item">
-          <div class="item-name">FOMO y ansiedad</div>
-          <div class="item-desc">Miedo a perderse algo y necesidad constante de validación</div>
-          <span class="item-tech">Psicología</span>
-        </div>
-        <div class="item">
-          <div class="item-name">Uso responsable</div>
-          <div class="item-desc">Establecer límites de tiempo y espacios libres de tecnología</div>
-          <span class="item-tech">Balance</span>
-        </div>
+      <div class="card">
+        <h3>Adicción Digital</h3>
+        <p>Uso excesivo de redes que genera dependencia y ansiedad.</p>
+        <span class="tag">Psicología</span>
       </div>
-
-      <!-- Contenido Inadecuado -->
-      <div class="card gray">
-        <h3 class="card-title">Contenido Inadecuado</h3>
-        <div class="item">
-          <div class="item-name">Exposición a violencia</div>
-          <div class="item-desc">Contenido gráfico que puede traumatizar especialmente a menores</div>
-          <span class="item-tech">Filtros</span>
-        </div>
-        <div class="item">
-          <div class="item-name">Desinformación</div>
-          <div class="item-desc">Noticias falsas y teorías conspirativas que distorsionan la realidad</div>
-          <span class="item-tech">Verificación</span>
-        </div>
-        <div class="item">
-          <div class="item-name">Control parental</div>
-          <div class="item-desc">Herramientas para filtrar y supervisar el contenido accesible</div>
-          <span class="item-tech">Supervisión</span>
-        </div>
+      <div class="card">
+        <h3>Contenido Inadecuado</h3>
+        <p>Violencia, desinformación y material no apto para menores.</p>
+        <span class="tag">Supervisión</span>
       </div>
     </div>
 
-    <!-- Bottom Section -->
-    <div class="bottom">
-      <h2>Protección y Prevención</h2>
-      <div class="features">
-        <div class="feature">
-          <div class="feature-icon">🔒</div>
-          <h3>Seguridad Digital</h3>
-          <p>Contraseñas fuertes, autenticación de dos factores y configuración de privacidad adecuada</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🧬</div>
-          <h3>Educación Digital</h3>
-          <p>Conocer los riesgos y enseñar a niños y adolescentes sobre el uso responsable</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🚀</div>
-          <h3>Comunicación Abierta</h3>
-          <p>Mantener diálogo constante sobre experiencias online y crear confianza para reportar problemas</p>
-        </div>
-      </div>
+    <div class="highlight">
+      <h3>Tu privacidad no es un juego</h3>
+      <p>Configura tus redes, protege tus datos y educa a quienes te rodean</p>
     </div>
+  </section>
 
-    <!-- Footer -->
-    <div class="footer">
-      <p>Mantente seguro en el mundo digital - Educación y prevención para todos</p>
-    </div>
-  </div>
+  <footer>
+    © 2025 Educación Digital | Protege tu mundo online
+  </footer>
+
 </body>
 </html>
